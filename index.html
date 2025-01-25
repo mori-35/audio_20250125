@@ -3,19 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio</title>
+    <title>Documen</title>
 </head>
+<style>
+    *{
+        margin: 3px;
+    }
+
+    .canvas{
+        background-color: beige;
+    }
+</style>
 <body>
-    <h2> audio1</h2>
-    <audio style="width: 375px;" controls src = "a1.m4a"></audio>
-    <h2> audio2</h2>
-    <audio style="width: 375px;" controls src = "a2.m4a"></audio>
-    <h2> audio3</h2>
-    <audio style="width: 375px;" controls src = "a3.m4a"></audio>
-    <h2> audio4</h2>
-    <audio style="width: 375px;" controls src = "a4.m4a"></audio>
+    <h2 id ="c1" class = "canvas">おいらおおかみ1</h2>
+    <h2 id ="c2" class = "canvas">チョーク2</h2>
+    <h2 id ="c3" class = "canvas">おいらおおかみ3</h2>
+    <h2 id ="c4" class = "canvas">チョーク4</h2>
+    <h2 id ="c5" class = "canvas">おいらおおかみ5</h2>
+    <h2 id ="c6" class = "canvas">チョーク6</h2>
+    <h2 id ="c7" class = "canvas">おいらおおかみ7</h2>
+    <h2 id ="c8" class = "canvas">チョーク8</h2>
+    <h2 id ="c9" class = "canvas">おいらおおかみ9</h2>
+    <h2 id ="c10" class = "canvas">チョーク10</h2>
+    <h2 id ="c11" class = "canvas">おいらおおかみ11</h2>
+    <h2 id ="c12" class = "canvas">チョーク12</h2>
+    <h2 id ="c13" class = "canvas">チョーク13</h2>
+    <br>
+    <audio controls id="audio" src=""></audio>
+
 </body>
 <script>
+    //===================================//
+    let container = [0];
+    let index = 0;
+    let audio = document.getElementById("audio");
 
+    for(let i= 1; i <= 13;i++) {
+        container.push(document.getElementById("a"+i));
+
+        document.getElementById("c" + i).addEventListener("click",function(e){
+            console.log("!");
+            index = parseInt(this.id.slice(1,3));
+            console.log(index)
+            audio.src = "a" + index + ".m4a";
+
+            for(let j = 1; j<=13; j++){
+                let obj = document.getElementById("c" + j);
+                obj.style.backgroundColor = "beige";
+                if(j == index){
+                    obj.style.backgroundColor = "antiquewhite";
+                }
+            }
+            
+        })
+    }
 </script>
 </html>
