@@ -23,7 +23,7 @@
     }
 </style>
 <body>
-    <h1 id ="c0">☆再生遅延を１秒にする☆</h1>
+    <!--<h1 id ="c0">☆再生遅延を１秒にする☆</h1>-->
     <h1 id ="c1" class = "canvas">①僕ら仲良し家族</h1>
     <h1 id ="c2" class = "canvas">②母さんとの約束</h1>
     <h1 id ="c3" class = "canvas">③おいらおおかみ(ダミ声)</h1>
@@ -51,7 +51,7 @@
     //===================================//
     let index = 1;
     let audio = document.getElementById("audio");
-    let isStart1s = false;
+    let isStart1s = true;
 
     for(let i= 1; i <= 14;i++) {
 
@@ -77,7 +77,7 @@
             }
 
             //update(1/29)
-            if(isStart1s && index != 9 && index != 11){
+            if(isStart1s && index != 9 && index != 11 && index != 12){
                 audio.currentTime = 1;
             }
 
@@ -87,10 +87,11 @@
     }
 
     //update(1/29)
+    /* 廃止(2025/02/01)
     document.getElementById("c0").addEventListener("click",function(e){
         isStart1s = !isStart1s;
 
         document.getElementById("c0").style.backgroundColor = (isStart1s)? "bisque":"beige";
-    })
+    })*/
 </script>
 </html>
